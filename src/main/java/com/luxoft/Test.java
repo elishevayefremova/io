@@ -1,46 +1,22 @@
 package com.luxoft;
 
-import java.io.File;
-import java.util.Arrays;
-import java.util.Scanner;
+
+import com.luxoft.filemanager.FileManager;
+
+import java.io.IOException;
 
 public class Test {
-    public static String test() {
 
-        String s = null;
+    public static void main(String[] args) throws IOException {
+        FileManager fileManager = new FileManager();
 
-        try {
+        int fileCount = fileManager.countFiles("D:\\BRAB\\urfgit1\\src\\html");
+        int dirCount = fileManager.countDirs("D:\\BRAB\\tupoy\\dist\\public");
+        System.out.println(fileCount);
+        System.out.println(dirCount);
 
-            s.length();
-
-            s +=1;
-
-            return s;
-
-        } catch(Exception e) {
-
-            s +=2;
-
-            return s;
-
-        } finally {
-
-            s +=3;
-
-            return s;
-
-        }
-
+        fileManager.copy("D:\\Luxcampus\\test\\dir2", "D:\\Luxcampus\\test\\dir3");
+        fileManager.move("D:\\Luxcampus\\test\\dir2", "D:\\Luxcampus\\test\\dir4");
     }
-
-
-
-    public static void main(String[] args) {
-
-        System.out.print(test());
-
-    }
-
 
 }
-
